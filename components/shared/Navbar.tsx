@@ -31,8 +31,8 @@ const Navbar = ({ toggleMobile, isCollapsed, setIsCollapsed, isDark, setIsDark }
   }, []);
 
   return (
-    <header className="h-16 flex items-center justify-between px-4 lg:px-6 border-b border-foreground/10 bg-background/80 backdrop-blur-md sticky top-0 z-30 shrink-0">
-      <div className="flex items-center gap-4">
+    <header className="h-16 font-outfit flex items-center justify-between px-4 lg:px-6 border-b border-foreground/10 bg-background/80 backdrop-blur-md sticky top-0 z-30 shrink-0">
+      <div className="flex items-center gap-2">
         <button
           onClick={toggleMobile}
           className="p-2 -ml-2 cursor-pointer lg:hidden rounded-lg hover:bg-foreground/5 transition-colors text-foreground/80 hover:text-foreground"
@@ -65,7 +65,7 @@ const Navbar = ({ toggleMobile, isCollapsed, setIsCollapsed, isDark, setIsDark }
         </button>
 
         {isProfileOpen && (
-          <div role="menu" aria-label="Profile menu" className="absolute right-0 top-[calc(100%+12px)] z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-foreground/10 bg-background text-foreground shadow-xl shadow-black/10">
+          <div role="menu" aria-label="Profile menu" className="absolute right-0 top-[calc(100%+12px)] z-50 w-[min(19rem,calc(100vw-6rem))] overflow-hidden rounded-2xl border border-foreground/10 bg-background text-foreground shadow-xl shadow-black/10">
             <div className="px-4 py-4">
               <p className="font-semibold">Your account</p>
               <p className="mt-0.5 text-sm text-foreground/55">Manage your EchoGPT account</p>

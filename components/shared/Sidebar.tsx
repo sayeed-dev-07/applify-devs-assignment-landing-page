@@ -14,6 +14,9 @@ import { SidebarProCard } from './sidebarComponents/SidebarProCard';
 import { SidebarHeader } from './sidebarComponents/SidebarHeader';
 
 gsap.registerPlugin(useGSAP);
+gsap.config({
+    force3D: true
+})
 
 interface SidebarProps {
     isMobileOpen: boolean;
@@ -48,7 +51,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
     useGSAP(() => {
         const mm = gsap.matchMedia();
 
-        // Desktop Animation (Width)
+
         mm.add("(min-width: 1024px)", () => {
             gsap.set(sidebarRef.current, { x: 0 });
             gsap.to(sidebarRef.current, {
@@ -58,7 +61,6 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
             });
         });
 
-        // Mobile Animation (X-Translate)
         mm.add("(max-width: 1023px)", () => {
             gsap.set(sidebarRef.current, { width: 280 });
             gsap.to(sidebarRef.current, {
@@ -74,7 +76,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
     return (
         <aside
             ref={sidebarRef}
-            className="fixed lg:relative top-0 left-0 h-svh z-50 bg-background border-r border-foreground/10 flex flex-col flex-shrink-0 -translate-x-full lg:translate-x-0 w-[280px]"
+            className="fixed font-outfit lg:relative top-0 left-0 h-svh z-50 bg-background border-r border-foreground/10 flex flex-col shrink-0 -translate-x-full lg:translate-x-0 w-[280px]"
         >
             <SidebarHeader
                 isCollapsed={isCollapsed}
@@ -82,9 +84,6 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
             />
 
             <nav className={`flex-1 overflow-y-auto overflow-x-hidden py-2 space-y-1 
-        [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent 
-        [&::-webkit-scrollbar-thumb]:bg-foreground/10 [&::-webkit-scrollbar-thumb]:rounded-full 
-        hover:[&::-webkit-scrollbar-thumb]:bg-foreground/20
         ${isCollapsed ? 'px-4' : 'px-3'}
       `}>
                 {navItems.map((item, idx) => {
@@ -94,7 +93,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                                 <span className={`text-[10px] font-bold text-foreground/40 uppercase tracking-wider transition-opacity ease-in-out ${isCollapsed ? 'opacity-0 duration-[160ms]' : 'opacity-100 duration-[280ms] delay-[120ms]'}`}>
                                     {item.label}
                                 </span>
-                                {/* Optional: Add a tiny divider dot when collapsed instead of empty space */}
+
                                 {isCollapsed && <div className="w-1 h-1 bg-foreground/20 rounded-full mx-auto mt-2" />}
                             </div>
                         )

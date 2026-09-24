@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import { Outfit } from "next/font/google";
+import AppShell from "@/components/shared/AppShell";
 import "./globals.css";
 
 
@@ -27,8 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${outfit.variable} ${header.variable} h-full antialiased`}
     >
-      <body className="font-outfit h-svh">
-        {children}</body>
+      <body className=" h-svh">
+        <AppShell>{children}</AppShell>
+      </body>
     </html>
   );
 }
