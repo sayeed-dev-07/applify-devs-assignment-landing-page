@@ -1,0 +1,120 @@
+"use client";
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import {
+    MessageSquare, Image as ImageIcon, Video, Layers,
+    Link2, History, ShoppingBag, Grid, Briefcase, FileText,
+    HelpCircle, Newspaper, CreditCard, Code, MessageCircle
+} from 'lucide-react';
+
+
+import { SidebarItem } from './sidebarComponents/SidebarItem';
+import { SidebarProCard } from './sidebarComponents/SidebarProCard';
+import { SidebarHeader } from './sidebarComponents/SidebarHeader';
+
+gsap.registerPlugin(useGSAP);
+
+interface SidebarProps {
+    isMobileOpen: boolean;
+    setIsMobileOpen: (val: boolean) => void;
+    isCollapsed: boolean;
+}
+
+const navItems = [
+    { name: 'New Chat', icon: MessageSquare, isPrimary: true },
+    { label: 'ENGAGEMENT' },
+    { name: 'Image Studio', icon: ImageIcon },
+    { name: 'Video Studio', icon: Video },
+    { name: 'Compare', icon: Layers },
+    { name: 'Connectors', icon: Link2 },
+    { name: 'History', icon: History },
+    { name: 'Store', icon: ShoppingBag },
+    { label: 'AI TASKS' },
+    { name: 'AI Tasks', icon: Grid },
+    { name: 'AI Job Analysis', icon: Briefcase },
+    { name: 'AI SOP Builder', icon: FileText },
+    { label: 'HELP & SUPPORT' },
+    { name: 'Support', icon: HelpCircle },
+    { name: 'Newsletter', icon: Newspaper },
+    { name: 'Subscriptions', icon: CreditCard },
+    { name: 'API Platform', icon: Code },
+    { name: 'Discord', icon: MessageCircle },
+];
+
+const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) => {
+    const sidebarRef = useRef<HTMLElement>(null);
+
+    useGSAP(() => {
+        const mm = gsap.matchMedia();
+
+        // Desktop Animation (Width)
+        mm.add("(min-width: 1024px)", () => {
+            gsap.set(sidebarRef.current, { x: 0 });
+            gsap.to(sidebarRef.current, {
+                width: isCollapsed ? 80 : 280,
+                duration: 0.4,
+                ease: "power3.inOut"
+            });
+        });
+
+        // Mobile Animation (X-Translate)
+        mm.add("(max-width: 1023px)", () => {
+            gsap.set(sidebarRef.current, { width: 280 });
+            gsap.to(sidebarRef.current, {
+                x: isMobileOpen ? 0 : -280,
+                duration: 0.4,
+                ease: "power3.out"
+            });
+        });
+
+        return () => mm.revert();
+    }, [isCollapsed, isMobileOpen]);
+
+    return (
+        <aside
+            ref={sidebarRef}
+            className="fixed lg:relative top-0 left-0 h-svh z-50 bg-background border-r border-foreground/10 flex flex-col flex-shrink-0 -translate-x-full lg:translate-x-0 w-[280px]"
+        >
+            <SidebarHeader
+                isCollapsed={isCollapsed}
+                closeMobile={() => setIsMobileOpen(false)}
+            />
+
+            <nav className={`flex-1 overflow-y-auto overflow-x-hidden py-2 space-y-1 
+        [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent 
+        [&::-webkit-scrollbar-thumb]:bg-foreground/10 [&::-webkit-scrollbar-thumb]:rounded-full 
+        hover:[&::-webkit-scrollbar-thumb]:bg-foreground/20
+        ${isCollapsed ? 'px-4' : 'px-3'}
+      `}>
+                {navItems.map((item, idx) => {
+                    if (item.label) {
+                        return (
+                            <div key={idx} className={`pt-4 pb-2 transition-[padding] duration-[400ms] ease-in-out ${isCollapsed ? 'px-0 text-center' : 'px-3'}`}>
+                                <span className={`text-[10px] font-bold text-foreground/40 uppercase tracking-wider transition-opacity ease-in-out ${isCollapsed ? 'opacity-0 duration-[160ms]' : 'opacity-100 duration-[280ms] delay-[120ms]'}`}>
+                                    {item.label}
+                                </span>
+                                {/* Optional: Add a tiny divider dot when collapsed instead of empty space */}
+                                {isCollapsed && <div className="w-1 h-1 bg-foreground/20 rounded-full mx-auto mt-2" />}
+                            </div>
+                        )
+                    }
+
+                    return (
+                        <SidebarItem
+                            key={idx}
+                            icon={item.icon!}
+                            label={item.name!}
+                            isPrimary={item.isPrimary}
+                            isCollapsed={isCollapsed}
+                        />
+                    )
+                })}
+            </nav>
+
+            <SidebarProCard isCollapsed={isCollapsed} />
+        </aside>
+    );
+};
+
+export default Sidebar;

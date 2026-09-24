@@ -12,11 +12,9 @@
   --font-outfit: var(--font-outfit);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F0F0E;
-    --foreground: #F7F7F7;
-  }
+.dark {
+  --background: #0F0F0E;
+  --foreground: #F7F7F7;
 }
 
 body {

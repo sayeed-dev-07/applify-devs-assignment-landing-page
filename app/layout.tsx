@@ -27,7 +27,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${outfit.variable} ${header.variable} h-full antialiased`}
     >
-      <body className="min-h-full font-outfit flex flex-col">{children}</body>
+      <body className="font-outfit h-svh">
+        {children}</body>
     </html>
   );
 }
