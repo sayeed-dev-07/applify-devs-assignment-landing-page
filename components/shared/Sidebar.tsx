@@ -25,24 +25,24 @@ interface SidebarProps {
 }
 
 const navItems = [
-    { name: 'New Chat', icon: MessageSquare, isPrimary: true },
+    { name: 'New Chat', icon: MessageSquare, isPrimary: true, link: '/' },
     { label: 'ENGAGEMENT' },
-    { name: 'Image Studio', icon: ImageIcon },
-    { name: 'Video Studio', icon: Video },
-    { name: 'Compare', icon: Layers },
-    { name: 'Connectors', icon: Link2 },
-    { name: 'History', icon: History },
-    { name: 'Store', icon: ShoppingBag },
+    { name: 'Image Studio', icon: ImageIcon, pro: true, link: '/image-studio' },
+    { name: 'Video Studio', icon: Video, pro: true, link: '/video-studio' },
+    { name: 'Compare', icon: Layers, link: '/compare' },
+    { name: 'Connectors', icon: Link2, link: '/connectors' },
+    { name: 'History', icon: History, link: '/history' },
+    { name: 'Store', icon: ShoppingBag, link: '/store' },
     { label: 'AI TASKS' },
-    { name: 'AI Tasks', icon: Grid },
-    { name: 'AI Job Analysis', icon: Briefcase },
-    { name: 'AI SOP Builder', icon: FileText },
+    { name: 'AI Tasks', icon: Grid, link: '/ai-tasks' },
+    { name: 'AI Job Analysis', icon: Briefcase, link: '/ai-job-analysis' },
+    { name: 'AI SOP Builder', icon: FileText, link: '/ai-sop-builder' },
     { label: 'HELP & SUPPORT' },
-    { name: 'Support', icon: HelpCircle },
-    { name: 'Newsletter', icon: Newspaper },
-    { name: 'Subscriptions', icon: CreditCard },
-    { name: 'API Platform', icon: Code },
-    { name: 'Discord', icon: MessageCircle },
+    { name: 'Support', icon: HelpCircle, link: '/support' },
+    { name: 'Newsletter', icon: Newspaper, link: '/newsletter' },
+    { name: 'Subscriptions', icon: CreditCard, link: '/subscriptions' },
+    { name: 'API Platform', icon: Code, link: '/api-platform' },
+    { name: 'Discord', icon: MessageCircle, link: '/discord' },
 ];
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) => {
@@ -104,8 +104,10 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                             key={idx}
                             icon={item.icon!}
                             label={item.name!}
+                            href={item.link!}
                             isPrimary={item.isPrimary}
                             isCollapsed={isCollapsed}
+                            pro={item.pro}
                         />
                     )
                 })}

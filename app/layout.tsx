@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
-import { Outfit } from "next/font/google";
+import { Outfit, Righteous } from "next/font/google";
 import AppShell from "@/components/shared/AppShell";
 import "./globals.css";
 
 
-const header = localFont({
-  variable: "--font-header",
-  src: './fonts/heading.woff2',
-  weight: '400',
-  style: 'normal',
-});
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+});
+const header = Righteous({
+  variable: "--font-header",
+  weight: "400"
 });
 
 export const metadata: Metadata = {
@@ -26,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${header.variable} h-full antialiased`}
+      className={`${outfit.variable}  ${header.variable} h-full antialiased`}
     >
       <body className=" h-svh">
         <AppShell>{children}</AppShell>

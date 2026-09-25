@@ -36,11 +36,11 @@ const ChatContainer = () => {
   return (
     <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden bg-background">
 
-      <div className="flex min-h-0 w-full flex-1 flex-col items-center justify-start overflow-y-auto px-3 pb-6 pt-6 sm:px-6 md:justify-center md:p-10">
+      <div className="flex min-h-0 w-full flex-1 flex-col items-center justify-start overflow-y-auto px-3 pb-3 pt-6 sm:px-6 md:justify-center md:p-10">
 
         <div className="my-0 flex w-full max-w-3xl flex-col items-center py-6 md:my-auto md:py-10">
 
-          <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-foreground/10 bg-foreground/3 text-foreground shadow-sm">
+          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border border-foreground/10 bg-foreground/3 text-foreground shadow-sm">
             <Target size={27} strokeWidth={1.6} />
           </div>
           <h1 className="mb-3 text-center font-header text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -70,11 +70,10 @@ const ChatContainer = () => {
         </div>
       </div>
 
-      {/* FIXED BOTTOM SEARCH BAR SECTION */}
+      {/*  bottom search bar  */}
       <div className="z-10 flex w-full shrink-0 flex-col items-center justify-center bg-gradient-to-t from-background via-background to-transparent px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 sm:px-4">
 
         <div className="w-full max-w-3xl">
-          {/* Usage Stats (Optional reference element) */}
           <div className="mb-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[11px] font-medium text-foreground/40">
             <Info size={14} />
             <span>5 of 5 messages left this 5-hour window</span>
@@ -119,7 +118,7 @@ const ChatContainer = () => {
 
           </div>
 
-          {/* Footer Disclaimer */}
+          {/* Footer */}
           <p className="text-[10px] text-center text-foreground/40 mt-3">
             EchoGPT can make mistakes. Consider verifying important information.
           </p>
