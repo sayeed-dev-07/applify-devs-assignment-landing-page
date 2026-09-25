@@ -43,6 +43,18 @@
   opacity: 0.75;
 }
 
+/* Slim scrollbar for screens smaller than 'sm' (640px) */
+@media (max-width: 639px) {
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 1px solid var(--scrollbar-track);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

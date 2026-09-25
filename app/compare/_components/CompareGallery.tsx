@@ -37,7 +37,7 @@ export const CompareGallery = ({ selectedModels }: CompareGalleryProps) => {
 
 
                             <div className={`w-full min-h-[300px] rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-3 border transition-colors
-                                ${isEmpty ? 'border-dashed border-foreground/15 bg-foreground/[0.01]' : 'border-solid border-foreground/10 bg-background shadow-sm'}
+                                ${isEmpty ? 'border-dashed border-foreground/15 bg-foreground/1' : 'border-solid border-foreground/10 bg-background shadow-sm'}
                             `}>
                                 <Settings2 size={24} className="text-foreground/20" />
                                 <p className="text-foreground/40 text-[11px] leading-relaxed max-w-[200px]">

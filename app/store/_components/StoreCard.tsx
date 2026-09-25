@@ -13,16 +13,16 @@ interface StoreCardProps {
     onToggle: () => void;
 }
 
-export const StoreCard = ({ 
-    title, creator, description, icon: Icon, category, rating, isAdded, onToggle 
+export const StoreCard = ({
+    title, creator, description, icon: Icon, category, rating, isAdded, onToggle
 }: StoreCardProps) => {
     return (
-        <div className="group flex flex-col p-5 rounded-3xl border border-foreground/10 bg-foreground/[0.01] hover:bg-foreground/[0.03] transition-all duration-300">
+        <div className="group flex flex-col p-5 rounded-3xl border border-foreground/10 bg-foreground/1 hover:bg-foreground/[0.03] transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
                 <div className="w-12 h-12 rounded-2xl border border-foreground/10 bg-background flex items-center justify-center text-foreground shadow-sm group-hover:shadow-md transition-shadow">
                     <Icon size={22} />
                 </div>
-                
+
                 <span className="px-2.5 py-1 rounded-full border border-foreground/10 text-[9px] font-bold text-foreground/50 uppercase tracking-wider bg-foreground/5">
                     {category}
                 </span>
@@ -44,11 +44,11 @@ export const StoreCard = ({
                     <span className="text-xs font-bold">{rating}</span>
                 </div>
 
-                <button 
+                <button
                     onClick={onToggle}
                     className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl font-bold text-xs transition-all cursor-pointer
-                        ${isAdded 
-                            ? 'bg-foreground/10 text-foreground hover:bg-foreground/15' 
+                        ${isAdded
+                            ? 'bg-foreground/10 text-foreground hover:bg-foreground/15'
                             : 'bg-foreground text-background hover:opacity-90 shadow-sm'
                         }
                     `}

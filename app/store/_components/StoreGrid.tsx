@@ -55,7 +55,7 @@ export const StoreGrid = () => {
 
                 <div className="w-full sm:w-px h-px sm:h-6 bg-foreground/10"></div>
 
-                <div className="flex items-center w-full sm:w-auto p-1 bg-foreground/5 rounded-xl shrink-0 overflow-x-auto custom-scrollbar">
+                <div className="flex items-center w-full sm:w-auto p-1 bg-foreground/5 rounded-xl shrink-0 overflow-x-auto  ">
                     {(['all', 'agent', 'plugin', 'prompt'] as const).map((f) => (
                         <button
                             key={f}

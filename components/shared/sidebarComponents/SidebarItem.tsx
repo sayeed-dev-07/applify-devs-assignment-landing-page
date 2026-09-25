@@ -6,6 +6,7 @@ interface SidebarItemProps {
     icon: LucideIcon;
     label: string;
     href: string;
+    targetBlank?: boolean;
     isActive?: boolean;
     isPrimary?: boolean;
     isCollapsed: boolean;
@@ -13,10 +14,12 @@ interface SidebarItemProps {
     closeMobile: () => void;
 }
 
-export const SidebarItem = ({ icon: Icon, label, href, isActive, isPrimary, isCollapsed, pro, closeMobile }: SidebarItemProps) => {
+export const SidebarItem = ({ icon: Icon, label, href, targetBlank, isActive, isPrimary, isCollapsed, pro, closeMobile }: SidebarItemProps) => {
     return (
         <Link
             href={href}
+            target={targetBlank ? '_blank' : undefined}
+            rel={targetBlank ? 'noopener noreferrer' : undefined}
             aria-current={isActive ? 'page' : undefined}
             onClick={closeMobile}
             title={isCollapsed ? label : undefined}

@@ -14,7 +14,7 @@ const VideoStudioPage = () => {
 
     return (
         <div className="flex-1 h-full overflow-y-auto w-full ">
-            <div className="max-w-4xl mx-auto w-full px-3 sm:px-6 py-12 md:py-10 flex flex-col gap-4 sm:gap-12">
+            <div className="max-w-4xl mx-auto w-full px-2 sm:px-6 py-12 md:py-10 flex flex-col gap-4 sm:gap-12">
 
                 <VideoStudioHeader />
 

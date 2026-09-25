@@ -63,7 +63,7 @@ export const HistoryList = () => {
 
                 <div className="w-full sm:w-px h-px sm:h-6 bg-foreground/10"></div>
 
-                <div className="flex items-center w-full sm:w-auto p-1 bg-foreground/5 rounded-xl shrink-0 overflow-x-auto custom-scrollbar">
+                <div className="flex items-center w-full sm:w-auto p-1 bg-foreground/5 rounded-xl shrink-0 overflow-x-auto  ">
                     {(['all', 'chat', 'image', 'video'] as const).map((f) => (
                         <button
                             key={f}
@@ -92,7 +92,7 @@ export const HistoryList = () => {
                             </h3>
 
                             {/* List Container */}
-                            <div className="w-full bg-foreground/[0.01] border border-foreground/10 rounded-3xl overflow-hidden shadow-sm">
+                            <div className="w-full bg-foreground/1 border border-foreground/10 rounded-3xl overflow-hidden shadow-sm">
                                 {group.items.map((item) => (
                                     <HistoryItem
                                         key={item.id}
@@ -104,7 +104,7 @@ export const HistoryList = () => {
                     ))}
                 </div>
             ) : (
-                <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/[0.01]">
+                <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">
                     <Settings2 size={24} className="text-foreground/20" />
                     <p className="text-foreground/50 text-sm">
                         No history found matching your filters.

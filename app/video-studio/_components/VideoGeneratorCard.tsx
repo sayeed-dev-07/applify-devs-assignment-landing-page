@@ -23,14 +23,14 @@ export const VideoGeneratorCard = ({
 }: VideoGeneratorCardProps) => {
     return (
         <div className="w-full flex flex-col gap-4 relative z-20">
-            <div className="relative z-30 w-full bg-foreground/[0.02] border border-foreground/10 rounded-3xl p-3 flex flex-col shadow-sm focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300">
+            <div className="relative z-30 w-full bg-foreground/2 border border-foreground/10 rounded-3xl p-3 flex flex-col shadow-sm focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300">
 
                 {/* Prompt Input */}
                 <textarea
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Describe a scene in cinematic detail..."
-                    className="w-full bg-transparent resize-none outline-none text-sm p-3 text-foreground placeholder:text-foreground/40 min-h-[100px] custom-scrollbar"
+                    className="w-full bg-transparent resize-none outline-none text-sm p-3 text-foreground placeholder:text-foreground/40 min-h-[100px]  "
                 />
 
 

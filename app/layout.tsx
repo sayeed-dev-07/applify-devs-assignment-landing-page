@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${outfit.variable}  ${header.variable} h-full antialiased`}
     >
-      <body className=" h-svh">
+      <body className="min-h-screen md:min-h-0 md:h-dvh">
         <AppShell>{children}</AppShell>
       </body>
     </html>

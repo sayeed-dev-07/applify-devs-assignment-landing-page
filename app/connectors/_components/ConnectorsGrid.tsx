@@ -88,7 +88,7 @@ export const ConnectorsGrid = () => {
                     ))}
                 </div>
             ) : (
-                <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/[0.01]">
+                <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">
                     <Search size={24} className="text-foreground/20" />
                     <p className="text-foreground/50 text-sm">
                         No connectors found matching &quot;{searchQuery}&quot;.

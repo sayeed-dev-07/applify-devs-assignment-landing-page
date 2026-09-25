@@ -8,7 +8,7 @@ export const VideoStudioGallery = () => {
                 Your videos
             </h3>
 
-            <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/[0.01]">
+            <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">
                 <PlaySquare size={24} className="text-foreground/20" />
                 <p className="text-foreground/50 text-sm">
                     Nothing here yet — describe a scene above to render your first video.

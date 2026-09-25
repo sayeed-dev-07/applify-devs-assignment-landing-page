@@ -21,7 +21,7 @@ export const GeneratorCard = ({
     selectedModel, setSelectedModel
 }: GeneratorCardProps) => {
     return (
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex px-2 flex-col gap-4">
             <div className="w-full bg-foreground/2 border border-foreground/10 rounded-3xl p-3 flex flex-col shadow-sm focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300 relative z-10">
 
                 {/* Prompt Input */}
@@ -29,7 +29,7 @@ export const GeneratorCard = ({
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Turn my photo into a professional headshot..."
-                    className="w-full bg-transparent resize-none outline-none text-sm p-3 text-foreground placeholder:text-foreground/40 min-h-[100px] custom-scrollbar"
+                    className="w-full bg-transparent resize-none outline-none text-sm p-3 text-foreground placeholder:text-foreground/40 min-h-[100px]  "
                 />
 
                 {/* Toolbar Settings & Submit */}

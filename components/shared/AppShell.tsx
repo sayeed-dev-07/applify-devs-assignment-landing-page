@@ -21,7 +21,7 @@ const AppShell = ({ children }: { children: React.ReactNode }) => {
   }, [isDark]);
 
   return (
-    <div className={`${isDark ? 'dark' : ''} flex  w-full overflow-hidden bg-background font-outfit h-svh text-foreground`}>
+    <div className={`${isDark ? 'dark' : ''} flex  w-full overflow-hidden bg-background font-outfit md:h-dvh text-foreground selection:bg-foreground selection:text-background`}>
       <Sidebar
         isMobileOpen={isMobileOpen}
         setIsMobileOpen={setIsMobileOpen}
@@ -37,7 +37,7 @@ const AppShell = ({ children }: { children: React.ReactNode }) => {
           setIsDark={setIsDark}
         />
 
-        <main className="min-h-0 flex-1 overflow-y-auto p-4 md:p-8">
+        <main className="min-h-0 flex-1 overflow-y-auto p-2.5 md:p-8">
           {children}
         </main>
       </div>

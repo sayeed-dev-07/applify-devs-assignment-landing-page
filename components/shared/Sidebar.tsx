@@ -43,7 +43,7 @@ const navItems = [
     { name: 'Newsletter', icon: Newspaper, link: '/newsletter' },
     { name: 'Subscriptions', icon: CreditCard, link: '/subscriptions' },
     { name: 'API Platform', icon: Code, link: '/api-platform' },
-    { name: 'Discord', icon: MessageCircle, link: '/discord' },
+    { name: 'Discord', icon: MessageCircle, link: 'https://discord.com/users/1159511128041332941', targetBlank: true },
 ];
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) => {
@@ -78,7 +78,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
     return (
         <aside
             ref={sidebarRef}
-            className="fixed font-outfit lg:relative top-0 left-0 h-svh z-50 bg-background border-r border-foreground/10 flex flex-col shrink-0 -translate-x-full lg:translate-x-0 w-[280px]"
+            className="fixed font-outfit lg:relative top-0 left-0 h-dvh z-50 bg-background border-r border-foreground/10 flex flex-col shrink-0 -translate-x-full lg:translate-x-0 w-[280px]"
         >
             <SidebarHeader
                 isCollapsed={isCollapsed}
@@ -107,6 +107,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                             icon={item.icon!}
                             label={item.name!}
                             href={item.link!}
+                            targetBlank={item.targetBlank}
                             isActive={item.link === '/'
                                 ? pathname === '/'
                                 : pathname === item.link || pathname.startsWith(`${item.link}/`)}

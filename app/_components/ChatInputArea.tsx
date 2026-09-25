@@ -8,7 +8,7 @@ export const ChatInputArea = () => {
     const [input, setInput] = useState("");
 
     return (
-        <div className="z-10 flex w-full shrink-0 flex-col items-center justify-center bg-linear-to-t from-background via-background to-transparent px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 sm:px-4">
+        <div className="z-10 flex w-full shrink-0 flex-col items-center justify-center bg-linear-to-t from-background via-background to-transparent  pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 sm:px-4">
             <div className="w-full max-w-3xl">
 
                 {/* Usage Info */}
@@ -38,7 +38,7 @@ export const ChatInputArea = () => {
                             onChange={(e) => setInput(e.target.value)}
                             rows={1}
                             placeholder="Ask a question..."
-                            className="max-h-32 w-full resize-none bg-transparent py-3 text-sm text-foreground outline-none placeholder:text-foreground/40 custom-scrollbar"
+                            className="max-h-32 w-full resize-none bg-transparent py-3 text-sm text-foreground outline-none placeholder:text-foreground/40  "
                             style={{ minHeight: '44px' }}
                         />
 
