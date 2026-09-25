@@ -22,7 +22,7 @@ export const GeneratorCard = ({
 }: GeneratorCardProps) => {
     return (
         <div className="w-full flex flex-col gap-4">
-            <div className="w-full bg-foreground/[0.02] border border-foreground/10 rounded-3xl p-3 flex flex-col shadow-sm focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300 relative z-10">
+            <div className="w-full bg-foreground/2 border border-foreground/10 rounded-3xl p-3 flex flex-col shadow-sm focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300 relative z-10">
 
                 {/* Prompt Input */}
                 <textarea

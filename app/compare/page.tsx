@@ -21,7 +21,7 @@ const ComparePage = () => {
 
                 <CompareHeader />
 
-                <div className="max-w-4xl mx-auto w-full">
+                <div className="max-w-4xl mx-auto  w-full">
                     <CompareGeneratorCard
                         prompt={prompt}
                         setPrompt={setPrompt}

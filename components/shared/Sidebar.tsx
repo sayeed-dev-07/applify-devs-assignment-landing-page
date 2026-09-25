@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import {
@@ -47,6 +48,7 @@ const navItems = [
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) => {
     const sidebarRef = useRef<HTMLElement>(null);
+    const pathname = usePathname();
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
@@ -105,6 +107,9 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                             icon={item.icon!}
                             label={item.name!}
                             href={item.link!}
+                            isActive={item.link === '/'
+                                ? pathname === '/'
+                                : pathname === item.link || pathname.startsWith(`${item.link}/`)}
                             isPrimary={item.isPrimary}
                             isCollapsed={isCollapsed}
                             pro={item.pro}

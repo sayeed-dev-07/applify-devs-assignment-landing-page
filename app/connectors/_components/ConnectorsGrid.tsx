@@ -39,7 +39,7 @@ export const ConnectorsGrid = () => {
 
     return (
         <div className="w-full flex flex-col gap-6 relative z-20">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full bg-foreground/2 border border-foreground/10 rounded-2xl p-2 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full bg-foreground/2 border focus-within:border-foreground/30 focus-within:ring-4 focus-within:ring-foreground/5 transition-all duration-300 border-foreground/10 rounded-2xl p-2 shadow-sm">
 
                 <div className="relative w-full sm:w-64 flex items-center shrink-0">
                     <Search size={16} className="absolute left-3 text-foreground/40" />
