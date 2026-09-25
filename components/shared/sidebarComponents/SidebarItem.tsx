@@ -9,12 +9,14 @@ interface SidebarItemProps {
     isPrimary?: boolean;
     isCollapsed: boolean;
     pro?: boolean;
+    closeMobile: () => void;
 }
 
-export const SidebarItem = ({ icon: Icon, label, href, isPrimary, isCollapsed, pro }: SidebarItemProps) => {
+export const SidebarItem = ({ icon: Icon, label, href, isPrimary, isCollapsed, pro, closeMobile }: SidebarItemProps) => {
     return (
         <Link
             href={href}
+            onClick={closeMobile}
             title={isCollapsed ? label : undefined}
             className={`flex items-center rounded-xl transition-all duration-[400ms] ease-in-out cursor-pointer group shrink-0 py-2.5 overflow-hidden
             ${isCollapsed ? 'w-11 mx-auto justify-center px-0' : 'w-full mx-0 justify-start px-3'}

@@ -108,6 +108,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                             isPrimary={item.isPrimary}
                             isCollapsed={isCollapsed}
                             pro={item.pro}
+                            closeMobile={() => setIsMobileOpen(false)}
                         />
                     )
                 })}
