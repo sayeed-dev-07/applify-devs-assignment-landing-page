@@ -25,7 +25,11 @@ export function PricingGrid() {
                                 className={`relative rounded-xl px-4 py-2.5 text-xs font-semibold transition-all cursor-pointer duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:px-5 ${isActive ? 'bg-background text-foreground shadow-sm' : 'text-foreground/55 hover:text-foreground'}`}
                             >
                                 {option}
-                                {value === 'yearly' && <span className="ml-2 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">{pricingData.yearlySavings}</span>}
+                                {value === 'yearly' && (
+                                    <span className="ml-2 rounded-full bg-foreground px-2 py-0.5 text-[10px] font-bold text-background shadow-sm">
+                                        {pricingData.yearlySavings}
+                                    </span>
+                                )}
                             </button>
                         );
                     })}
