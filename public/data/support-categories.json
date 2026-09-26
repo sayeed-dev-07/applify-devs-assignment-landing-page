@@ -1,0 +1,6 @@
+[
+  { "id": "getting-started", "title": "Getting Started", "description": "Learn the basics and set up your workspace efficiently.", "iconKey": "BookOpen" },
+  { "id": "billing", "title": "Billing & Plans", "description": "Manage your subscription, credits, and payment methods.", "iconKey": "CreditCard" },
+  { "id": "account", "title": "Account Settings", "description": "Update your profile, security, and notification preferences.", "iconKey": "Settings" },
+  { "id": "api", "title": "API & Integration", "description": "Documentation for developers building with EchoGPT.", "iconKey": "Code" }
+]

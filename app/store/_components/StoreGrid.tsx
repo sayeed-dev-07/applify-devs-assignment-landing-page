@@ -6,19 +6,12 @@ import { MdOutlineExtension } from 'react-icons/md';
 import { BsMagic } from 'react-icons/bs';
 import { IoMdAnalytics } from 'react-icons/io';
 import { StoreCard } from './StoreCard';
+import { storeData } from '@/data/StoreData';
 
-
-const storeItems = [
-    { id: '1', title: 'Data Analyst Pro', creator: 'Echo Team', description: 'Advanced data visualization and CSV analysis agent with Python backend support.', icon: IoMdAnalytics, category: 'agent', rating: '4.9', isAdded: true },
-    { id: '2', title: 'Code Refactor Bot', creator: 'DevStudio', description: 'Automatically reviews your code and suggests clean architecture improvements.', icon: FaRobot, category: 'agent', rating: '4.7', isAdded: false },
-    { id: '3', title: 'Web Scraper Plugin', creator: 'DataGen', description: 'Extract clean markdown and JSON data from any public URL seamlessly.', icon: MdOutlineExtension, category: 'plugin', rating: '4.5', isAdded: false },
-    { id: '4', title: 'Midjourney Prompt Crafter', creator: 'PixelArts', description: 'Generates highly detailed prompt parameters for AI image models.', icon: BsMagic, category: 'prompt', rating: '4.8', isAdded: true },
-    { id: '5', title: 'SEO Blog Writer', creator: 'ContentPro', description: 'Creates SEO-optimized long-form articles with built-in keyword density tracking.', icon: FaRobot, category: 'agent', rating: '4.6', isAdded: false },
-    { id: '6', title: 'GitHub PR Summarizer', creator: 'GitTools', description: 'Plugin that reads your pull requests and writes human-readable release notes.', icon: MdOutlineExtension, category: 'plugin', rating: '4.9', isAdded: false },
-];
+const storeIcons = { Analytics: IoMdAnalytics, Robot: FaRobot, Extension: MdOutlineExtension, Magic: BsMagic };
 
 export const StoreGrid = () => {
-    const [items, setItems] = useState(storeItems);
+    const [items, setItems] = useState(storeData);
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState<'all' | 'agent' | 'plugin' | 'prompt'>('all');
 
@@ -76,13 +69,17 @@ export const StoreGrid = () => {
             {/* Grid Layout */}
             {filteredItems.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
-                    {filteredItems.map((item) => (
+                    {filteredItems.map((item) => {
+                        const Icon = storeIcons[item.iconKey as keyof typeof storeIcons];
+                        return (
                         <StoreCard
                             key={item.id}
                             {...item}
+                            icon={Icon}
                             onToggle={() => toggleAdded(item.id)}
                         />
-                    ))}
+                        );
+                    })}
                 </div>
             ) : (
                 <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">

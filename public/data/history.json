@@ -1,0 +1,15 @@
+[
+  { "dateGroup": "Today", "items": [
+    { "id": "1", "type": "chat", "title": "React Performance Optimization", "snippet": "How to use useMemo and useCallback effectively...", "time": "2:30 PM" },
+    { "id": "2", "type": "image", "title": "Futuristic Cityscape", "snippet": "Prompt: A cyberpunk city at night with neon lights...", "time": "11:15 AM" }
+  ] },
+  { "dateGroup": "Yesterday", "items": [
+    { "id": "3", "type": "video", "title": "Logo Reveal Animation", "snippet": "Prompt: Minimalist geometric logo resolving from particles...", "time": "4:45 PM" },
+    { "id": "4", "type": "chat", "title": "PostgreSQL Schema Design", "snippet": "Help me design a relational schema for a multi-tenant app...", "time": "9:00 AM" },
+    { "id": "5", "type": "chat", "title": "Weekly Meal Plan", "snippet": "Generate a high-protein vegetarian meal plan...", "time": "8:20 AM" }
+  ] },
+  { "dateGroup": "Previous 7 Days", "items": [
+    { "id": "6", "type": "image", "title": "Professional Headshot", "snippet": "Prompt: Studio lighting, corporate background, 85mm lens...", "time": "Sep 22" },
+    { "id": "7", "type": "chat", "title": "Email Drafting", "snippet": "Write a polite follow-up email to a client regarding an invoice...", "time": "Sep 20" }
+  ] }
+]

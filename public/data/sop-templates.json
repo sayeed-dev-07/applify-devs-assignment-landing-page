@@ -1,0 +1,6 @@
+[
+  { "id": "academic", "title": "Academic Excellence", "description": "Ideal for students with strong academic records applying to graduate programs.", "iconKey": "GraduationCap", "tags": ["Academic", "Graduate Studies", "Scholarships"] },
+  { "id": "professional", "title": "Professional Track", "description": "Designed for applicants with significant work experience seeking advanced degrees.", "iconKey": "Briefcase", "tags": ["Career", "Professional Development", "MBA"] },
+  { "id": "research", "title": "Research Focused", "description": "Perfect for research-oriented applicants targeting PhD or research-intensive programs.", "iconKey": "Microscope", "tags": ["Research", "PhD", "Innovation"] },
+  { "id": "creative", "title": "Creative Arts", "description": "Tailored for applicants to creative programs like fine arts, design, or writing.", "iconKey": "Palette", "tags": ["Creative", "Arts", "Portfolio"] }
+]

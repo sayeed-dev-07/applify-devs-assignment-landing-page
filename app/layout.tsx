@@ -15,8 +15,29 @@ const header = Righteous({
 });
 
 export const metadata: Metadata = {
-  title: "Echo GPT",
-  description: "a cutting-edge AI-powered platform that revolutionizes the way you interact with technology. With its advanced natural language processing capabilities, Echo GPT enables seamless communication and understanding between humans and machines. Whether you're looking to automate tasks, generate content, or simply have a conversation, Echo GPT is your go-to solution for all things AI.",
+  applicationName: "EchoGPT",
+  title: {
+    default: "EchoGPT — Your AI Workspace",
+    template: "%s | EchoGPT",
+  },
+  description: "Chat with AI, create images and video, compare models, and get focused work done in one creative AI workspace.",
+  keywords: ["AI assistant", "AI workspace", "AI image generation", "AI video generation", "AI productivity"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "EchoGPT — Your AI Workspace",
+    description: "Chat with AI, create images and video, compare models, and get focused work done in one creative AI workspace.",
+    siteName: "EchoGPT",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "EchoGPT — Your AI Workspace",
+    description: "Chat with AI, create images and video, compare models, and get focused work done in one creative AI workspace.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

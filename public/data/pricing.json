@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Simple, transparent pricing",
+  "title": "Make room for your next big idea.",
+  "description": "One workspace for the work you do every day. Pick a plan that fits your pace, and change it whenever you need.",
+  "billingOptions": ["Monthly", "Yearly"],
+  "yearlySavings": "Save 17%",
+  "plans": [
+    {
+      "id": "free",
+      "name": "Free",
+      "description": "A thoughtful place to start exploring.",
+      "price": 0,
+      "interval": "forever",
+      "monthlyEquivalent": "No card required",
+      "features": ["25 messages each month", "Access to essential AI models", "3 image generations", "Community support"],
+      "cta": "Get started"
+    },
+    {
+      "id": "monthly",
+      "name": "Pro monthly",
+      "description": "For curious minds with a lot to make.",
+      "price": 19,
+      "interval": "/ month",
+      "monthlyEquivalent": "Billed monthly",
+      "features": ["Unlimited chat with Pro models", "100 image generations", "Access to Image & Video Studio", "Priority task queue", "Advanced Resume & SOP builders"],
+      "cta": "Choose monthly"
+    },
+    {
+      "id": "annual",
+      "name": "Pro yearly",
+      "description": "More momentum, with the best value all year.",
+      "price": 16,
+      "interval": "/ month",
+      "monthlyEquivalent": "$192 billed annually",
+      "badge": "Most popular",
+      "features": ["Everything in Pro monthly", "2 months free every year", "Early access to new tools", "Priority support from our team"],
+      "cta": "Choose yearly",
+      "popular": true
+    }
+  ],
+  "trustNote": "No hidden fees. Cancel your subscription whenever you like.",
+  "paymentNote": "Secure checkout · Your payment details stay private"
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "github", "name": "GitHub", "description": "Analyze repositories, review code, and automate pull requests.", "iconKey": "Github", "isConnected": true },
+  { "id": "notion", "name": "Notion", "description": "Sync your workspace documents and query your knowledge base.", "iconKey": "FileText", "isConnected": true },
+  { "id": "slack", "name": "Slack", "description": "Interact with EchoGPT directly within your team channels.", "iconKey": "Slack", "isConnected": false },
+  { "id": "postgres", "name": "PostgreSQL", "description": "Connect securely to query your database using natural language.", "iconKey": "Database", "isConnected": false },
+  { "id": "gdrive", "name": "Google Drive", "description": "Index and search across your documents, sheets, and slides.", "iconKey": "Cloud", "isConnected": false },
+  { "id": "discord", "name": "Discord", "description": "Add the EchoGPT bot to your server for community interactions.", "iconKey": "MessageSquare", "isConnected": false }
+]

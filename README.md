@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EchoGPT - AI Platform Interface
+
+A highly modular, high-contrast monochrome React/Next.js application. This project features a strictly component-based architecture for maximum maintainability, isolated data structures for easy content updates, and smooth GSAP animations for a premium user experience.
+
+## Key Features
+
+* **Component-Based Architecture:** Every route (e.g., `ai-job-analysis`, `ai-sop-builder`) is broken down into small, single-responsibility components within its own local `components` directory. This makes debugging easier, UI updates more seamless, and components highly reusable.
+
+* **Data-Driven Content:** All textual content and platform data, including pricing, tasks, history, and templates, are separated from the UI logic and stored in `public/data` as JSON files. By updating these files, you can instantly change the page content without modifying the core React components.
+
+* **Premium UX with GSAP:** Utilizes GSAP and `@gsap/react` for performant micro-interactions. Features include staggered card reveals, smooth fade-ups, and subtle scale animations that elevate the overall user experience.
+
+* **High-Contrast Monochrome Design:** A sleek, minimal design system utilizing the latest Tailwind CSS v4.
+
+## Tech Stack
+
+* **Framework:** Next.js `v16.3.6`
+* **Library:** React & React DOM `v19.2.8`
+* **Styling:** Tailwind CSS `v4` with PostCSS
+* **Animations:** GSAP `v3.15.0` & `@gsap/react` `v2.1.2`
+* **Icons:** Lucide React `v1.47.0` & React Icons `v5.7.0`
+* **Language:** TypeScript `v5`
+
+## Project Structure
+
+```text
+├── app/
+│   ├── components/                  # Global shared components (ChatHero, ModelSelector, etc.)
+│   ├── ai-job-analysis/
+│   │   ├── components/              # Route-specific isolated components
+│   │   └── page.tsx                  # Route orchestrator
+│   ├── ai-sop-builder/               # SOP Builder route and isolated components
+│   ├── ai-tasks/                     # AI Tasks dashboard route
+│   ├── api-platform/                 # API Platform route
+│   ├── compare/                      # Model comparison route
+│   ├── connectors/                   # Integrations route
+│   ├── fonts/                        # Local font assets
+│   ├── history/                      # User activity history route
+│   ├── image-studio/                 # Image generation route
+│   ├── newsletter/                   # Newsletter route
+│   ├── store/                        # Extensions/Store route
+│   ├── subscriptions/                # Pricing and billing route
+│   ├── support/                      # Help and support route
+│   ├── video-studio/                 # Video generation route
+│   ├── layout.tsx                    # Global layout wrapper
+│   └── page.tsx                      # Main landing page
+│
+├── public/
+│   └── data/                         # Centralized JSON data for all routes
+│       ├── ai-tasks.json             # AI Tasks directory data
+│       ├── chat-models.json          # Available chat models
+│       ├── chat-suggestions.json     # Chat prompt suggestions
+│       ├── connectors.json            # Connectors/integrations data
+│       ├── history.json              # Mock history data
+│       ├── image-models.json         # Image generation models
+│       ├── navbar.json               # Navigation links data
+│       ├── pricing.json              # Subscription plans data
+│       ├── sop-templates.json        # SOP Builder templates
+│       ├── store-items.json          # Store extensions data
+│       ├── support-categories.json   # Support topics data
+│       └── video-models.json         # Video generation models
+│
+├── types/
+│   └── site.ts                       # Global TypeScript interfaces and types
+│
+├── tailwind.config.ts                # Tailwind CSS configuration
+└── package.json                      # Project dependencies and scripts
+```
+
+## How to Modify and Maintain
+
+### 1. Changing Text or Content
+
+To update text, pricing, categories, or available models on any page, **do not edit the React components directly**.
+
+Instead, navigate to the `public/data/` folder and open the relevant JSON file, such as:
+
+* `pricing.json`
+* `sop-templates.json`
+* `chat-models.json`
+* `ai-tasks.json`
+
+Update the required values in the JSON file. The application is designed to automatically fetch and reflect these changes in the UI.
+
+### 2. Fixing Bugs or Changing UI Layouts
+
+Because the application uses a strict component-based architecture, UI changes are highly isolated.
+
+For example, if you need to fix a bug or modify the layout of the Job Analysis page, navigate to:
+
+```text
+app/ai-job-analysis/components/
+```
+
+You will find the relevant components, such as the header, form, or report, without having to work through a large monolithic page file.
+
+### 3. Adjusting Animations
+
+Page and component animations are powered by GSAP.
+
+To modify animation behavior such as:
+
+* Duration
+* Delay
+* Stagger
+* Scale
+* Easing
+* Bounce effects
+
+Locate the `useGSAP` hook inside the relevant React component and adjust the GSAP timeline or animation parameters.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Open the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open the following URL in your browser:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+http://localhost:3000
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application should now be running in development mode.

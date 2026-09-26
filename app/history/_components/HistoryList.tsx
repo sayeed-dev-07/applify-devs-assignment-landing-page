@@ -2,32 +2,7 @@
 import React, { useState } from 'react';
 import { Search, Settings2 } from 'lucide-react';
 import { HistoryItem, HistoryType } from './HistoryItem';
-
-
-const historyData = [
-    {
-        dateGroup: 'Today',
-        items: [
-            { id: '1', type: 'chat' as HistoryType, title: 'React Performance Optimization', snippet: 'How to use useMemo and useCallback effectively...', time: '2:30 PM' },
-            { id: '2', type: 'image' as HistoryType, title: 'Futuristic Cityscape', snippet: 'Prompt: A cyberpunk city at night with neon lights...', time: '11:15 AM' },
-        ]
-    },
-    {
-        dateGroup: 'Yesterday',
-        items: [
-            { id: '3', type: 'video' as HistoryType, title: 'Logo Reveal Animation', snippet: 'Prompt: Minimalist geometric logo resolving from particles...', time: '4:45 PM' },
-            { id: '4', type: 'chat' as HistoryType, title: 'PostgreSQL Schema Design', snippet: 'Help me design a relational schema for a multi-tenant app...', time: '9:00 AM' },
-            { id: '5', type: 'chat' as HistoryType, title: 'Weekly Meal Plan', snippet: 'Generate a high-protein vegetarian meal plan...', time: '8:20 AM' },
-        ]
-    },
-    {
-        dateGroup: 'Previous 7 Days',
-        items: [
-            { id: '6', type: 'image' as HistoryType, title: 'Professional Headshot', snippet: 'Prompt: Studio lighting, corporate background, 85mm lens...', time: 'Sep 22' },
-            { id: '7', type: 'chat' as HistoryType, title: 'Email Drafting', snippet: 'Write a polite follow-up email to a client regarding an invoice...', time: 'Sep 20' },
-        ]
-    }
-];
+import { historyData } from '@/data/HistoryData';
 
 export const HistoryList = () => {
     const [searchQuery, setSearchQuery] = useState('');

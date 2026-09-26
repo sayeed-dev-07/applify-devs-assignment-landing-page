@@ -1,0 +1,6 @@
+[
+  { "id": "nano-lite", "name": "Nano Banana 2 Lite", "tag": "Fast" },
+  { "id": "nano-pro", "name": "Nano Banana 2 Pro", "tag": "Quality" },
+  { "id": "echo-vision", "name": "Echo Vision XL", "tag": "Beta" },
+  { "id": "dall-e-3", "name": "DALL-E 3", "tag": "Pro" }
+]

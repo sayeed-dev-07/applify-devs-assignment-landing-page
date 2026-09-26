@@ -1,18 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { ChevronDown, Check, Target } from 'lucide-react';
-
-interface Model {
-    id: string;
-    name: string;
-    tag?: string;
-}
-
-const models: Model[] = [
-    { id: 'echo-4', name: 'EchoGPT 4.0', tag: 'Smart' },
-    { id: 'echo-3', name: 'EchoGPT 3.5', tag: 'Fast' },
-    { id: 'echo-vision', name: 'Echo Vision', tag: 'Beta' }
-];
+import { chatModels as models } from '@/data/ChatData';
 
 interface ModelSelectorProps {
     initialModel?: string;

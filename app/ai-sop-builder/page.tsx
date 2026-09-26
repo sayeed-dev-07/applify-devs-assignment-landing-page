@@ -3,7 +3,13 @@ import { SOPFeatures } from './_components/SOPFeatures';
 import { SOPHeader } from './_components/SOPHeader';
 import { SOPTemplatesGrid } from './_components/SOPTemplatesGrid';
 import { SOPHistoryEmptyState } from './_components/SOPHistoryEmptyState';
+import { createRouteMetadata } from '@/data/SeoMetadata';
 
+export const metadata = createRouteMetadata(
+    'AI Statement of Purpose Builder',
+    'Plan a compelling statement of purpose with structured guidance and templates for academic, professional, research, and creative applications.',
+    ['AI statement of purpose', 'SOP builder', 'graduate application essay', 'statement of purpose templates']
+);
 
 const AISOPBuilderPage = () => {
     return (

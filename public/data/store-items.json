@@ -1,0 +1,8 @@
+[
+  { "id": "1", "title": "Data Analyst Pro", "creator": "Echo Team", "description": "Advanced data visualization and CSV analysis agent with Python backend support.", "iconKey": "Analytics", "category": "agent", "rating": "4.9", "isAdded": true },
+  { "id": "2", "title": "Code Refactor Bot", "creator": "DevStudio", "description": "Automatically reviews your code and suggests clean architecture improvements.", "iconKey": "Robot", "category": "agent", "rating": "4.7", "isAdded": false },
+  { "id": "3", "title": "Web Scraper Plugin", "creator": "DataGen", "description": "Extract clean markdown and JSON data from any public URL seamlessly.", "iconKey": "Extension", "category": "plugin", "rating": "4.5", "isAdded": false },
+  { "id": "4", "title": "Midjourney Prompt Crafter", "creator": "PixelArts", "description": "Generates highly detailed prompt parameters for AI image models.", "iconKey": "Magic", "category": "prompt", "rating": "4.8", "isAdded": true },
+  { "id": "5", "title": "SEO Blog Writer", "creator": "ContentPro", "description": "Creates SEO-optimized long-form articles with built-in keyword density tracking.", "iconKey": "Robot", "category": "agent", "rating": "4.6", "isAdded": false },
+  { "id": "6", "title": "GitHub PR Summarizer", "creator": "GitTools", "description": "Plugin that reads your pull requests and writes human-readable release notes.", "iconKey": "Extension", "category": "plugin", "rating": "4.9", "isAdded": false }
+]

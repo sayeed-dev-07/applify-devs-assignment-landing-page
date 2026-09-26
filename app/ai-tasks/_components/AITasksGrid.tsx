@@ -1,52 +1,20 @@
 "use client";
 import React, { useState } from 'react';
-import { Search, Lightbulb, Rocket, Sparkles, Palette, Zap, Target, Users, FileText, Mail, Briefcase, Gamepad2, Film, Bike, TreePine, Users2, Settings2 } from 'lucide-react';
+import { Search, Lightbulb, Rocket, Sparkles, Palette, Zap, Target, Users, FileText, Mail, Briefcase, Gamepad2, Film, Bike, TreePine, Settings2 } from 'lucide-react';
 import { FaXTwitter, FaYoutube, FaTiktok, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import { AITaskAppCard } from './AITaskCard';
+import { aiTasksData } from '@/data/AITasksData';
 
 
 type Category = 'Ideas' | 'Work' | 'Fun' | 'Online Content';
 
-const appsData = [
-    // IDEAS
-    { id: 'i1', category: 'Ideas', title: 'Think Outside the Box', description: 'Breakthrough ideas await your discovery', icon: Lightbulb },
-    { id: 'i2', category: 'Ideas', title: 'Startup', description: 'Get a list of ambitious startup ideas based on your area of interest', icon: Rocket },
-    { id: 'i3', category: 'Ideas', title: 'Innovate and Elevate', description: 'Your guide to unique and fresh ideas', icon: Sparkles },
-    { id: 'i4', category: 'Ideas', title: 'Unleashing Creativity', description: 'Explore a world of brilliant ideas', icon: Palette },
-    { id: 'i5', category: 'Ideas', title: 'Idea Sparks', description: 'Ignite your creativity for innovative solutions', icon: Zap },
-
-    // WORK
-    { id: 'w1', category: 'Work', title: 'Max Productivity', description: 'Max productivity, achieve more, stress less', icon: Target },
-    { id: 'w2', category: 'Work', title: 'Recruiting', description: 'Define the qualifications for any position', icon: Users },
-    { id: 'w3', category: 'Work', title: 'CV Builder', description: 'Generate a creative resume', icon: FileText },
-    { id: 'w4', category: 'Work', title: 'Email', description: 'Get help to craft a compelling email', icon: Mail },
-    { id: 'w5', category: 'Work', title: 'Interview Tips', description: 'Receive helpful tips for your interview', icon: Briefcase },
-
-    // FUN
-    { id: 'f1', category: 'Fun', title: 'Gaming', description: 'Level up your gaming skills and conquer challenges', icon: Gamepad2 },
-    { id: 'f2', category: 'Fun', title: 'Movie Time', description: 'Cinematic delight, enjoy the latest blockbuster', icon: Film },
-    { id: 'f3', category: 'Fun', title: 'Cycling Day', description: 'Pedal through scenic routes, relish the ride', icon: Bike },
-    { id: 'f4', category: 'Fun', title: 'Outdoor Activities', description: 'Embrace nature, engage in thrilling outdoor adventures', icon: TreePine },
-    { id: 'f5', category: 'Fun', title: 'Fun with buddies', description: 'Create memories with friends, have endless fun', icon: Users2 },
-
-    // ONLINE CONTENT
-    { id: 'o1', category: 'Online Content', title: 'X Posts', description: 'Summarize your text into a post (Tweet)', icon: FaXTwitter },
-    { id: 'o2', category: 'Online Content', title: 'YouTube Scripts', description: 'Create a script for your video on any topic', icon: FaYoutube },
-    { id: 'o3', category: 'Online Content', title: 'TikTok Posts', description: 'Craft TikTok posts on any topic', icon: FaTiktok },
-    { id: 'o4', category: 'Online Content', title: 'TikTok Captions', description: 'Boost your TikTok views with appealing captions', icon: FaTiktok },
-    { id: 'o5', category: 'Online Content', title: 'Insta Content', description: 'Create Instagram posts on any topic', icon: FaInstagram },
-    { id: 'o6', category: 'Online Content', title: 'Insta Reels', description: 'Get creative descriptions for your Instagram Reels', icon: FaInstagram },
-    { id: 'o7', category: 'Online Content', title: 'Insta Captions', description: 'Come up with engaging captions for your Instagram posts', icon: FaInstagram },
-    { id: 'o8', category: 'Online Content', title: 'LinkedIn Hiring', description: 'Write clear and concise job descriptions', icon: FaLinkedin },
-    { id: 'o9', category: 'Online Content', title: 'LinkedIn Job Search', description: 'Make your LinkedIn cover letter stand out', icon: FaLinkedin },
-    { id: 'o10', category: 'Online Content', title: 'LinkedIn Profile', description: 'Enhance your professional presence and stand out', icon: FaLinkedin },
-];
+const taskIcons = { Lightbulb, Rocket, Sparkles, Palette, Zap, Target, Users, FileText, Mail, Briefcase, Gamepad2, Film, Bike, TreePine, XTwitter: FaXTwitter, Youtube: FaYoutube, Tiktok: FaTiktok, Instagram: FaInstagram, Linkedin: FaLinkedin };
 
 export const AITasksGrid = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState<'all' | Category>('all');
 
-    const filteredApps = appsData.filter(app => {
+    const filteredApps = aiTasksData.filter(app => {
         const matchesSearch = app.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             app.description.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = filter === 'all' || app.category === filter;
@@ -94,14 +62,17 @@ export const AITasksGrid = () => {
             {/* Standard Grid Layout */}
             {filteredApps.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full">
-                    {filteredApps.map((app) => (
+                    {filteredApps.map((app) => {
+                        const Icon = taskIcons[app.iconKey as keyof typeof taskIcons];
+                        return (
                         <AITaskAppCard
                             key={app.id}
                             title={app.title}
                             description={app.description}
-                            icon={app.icon}
+                            icon={Icon}
                         />
-                    ))}
+                        );
+                    })}
                 </div>
             ) : (
                 <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">

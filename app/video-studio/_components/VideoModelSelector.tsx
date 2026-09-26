@@ -1,17 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { ChevronDown, Check, Clapperboard } from 'lucide-react';
-
-interface Model {
-    id: string;
-    name: string;
-    tag?: string;
-}
-
-const models: Model[] = [
-    { id: 'echo-vid-pro', name: 'Echo Video Pro', tag: 'HQ' },
-    { id: 'echo-vid-fast', name: 'Echo Video Fast' }
-];
+import { videoModels as models } from '@/data/VideoStudioData';
 
 interface VideoModelSelectorProps {
     selectedModel: string;

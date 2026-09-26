@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, X } from 'lucide-react';
+import Link from 'next/link';
 
 interface SidebarHeaderProps {
     isCollapsed: boolean;
@@ -9,7 +10,7 @@ interface SidebarHeaderProps {
 export const SidebarHeader = ({ isCollapsed, closeMobile }: SidebarHeaderProps) => {
     return (
         <div className={`h-16 flex items-center shrink-0 transition-all duration-[400ms] ease-in-out ${isCollapsed ? 'pl-[26px]' : 'px-6'} justify-between`}>
-            <div className="flex items-center cursor-pointer group">
+            <Link href={'/'} className="flex items-center cursor-pointer group">
                 <Target size={28} className="shrink-0 text-foreground group-hover:opacity-80 transition-opacity" />
                 <span
                     className={`overflow-hidden whitespace-nowrap font-header text-xl font-bold tracking-wide text-foreground origin-left transition-[max-width,opacity,margin] duration-[400ms] ease-in-out
@@ -18,7 +19,7 @@ export const SidebarHeader = ({ isCollapsed, closeMobile }: SidebarHeaderProps) 
                 >
                     EchoGPT
                 </span>
-            </div>
+            </Link>
 
             <button
                 onClick={closeMobile}

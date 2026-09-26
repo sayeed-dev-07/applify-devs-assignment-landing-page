@@ -8,6 +8,7 @@ import {
     Link2, History, ShoppingBag, Grid, Briefcase, FileText,
     HelpCircle, Newspaper, CreditCard, Code, MessageCircle
 } from 'lucide-react';
+import { navbarData } from '@/data/NavBarData';
 
 
 import { SidebarItem } from './sidebarComponents/SidebarItem';
@@ -25,26 +26,11 @@ interface SidebarProps {
     isCollapsed: boolean;
 }
 
-const navItems = [
-    { name: 'New Chat', icon: MessageSquare, isPrimary: true, link: '/' },
-    { label: 'ENGAGEMENT' },
-    { name: 'Image Studio', icon: ImageIcon, pro: true, link: '/image-studio' },
-    { name: 'Video Studio', icon: Video, pro: true, link: '/video-studio' },
-    { name: 'Compare', icon: Layers, link: '/compare' },
-    { name: 'Connectors', icon: Link2, link: '/connectors' },
-    { name: 'History', icon: History, link: '/history' },
-    { name: 'Store', icon: ShoppingBag, link: '/store' },
-    { label: 'AI TASKS' },
-    { name: 'AI Tasks', icon: Grid, link: '/ai-tasks' },
-    { name: 'AI Job Analysis', icon: Briefcase, link: '/ai-job-analysis' },
-    { name: 'AI SOP Builder', icon: FileText, link: '/ai-sop-builder' },
-    { label: 'HELP & SUPPORT' },
-    { name: 'Support', icon: HelpCircle, link: '/support' },
-    { name: 'Newsletter', icon: Newspaper, link: '/newsletter' },
-    { name: 'Subscriptions', icon: CreditCard, link: '/subscriptions' },
-    { name: 'API Platform', icon: Code, link: '/api-platform' },
-    { name: 'Discord', icon: MessageCircle, link: 'https://discord.com/users/1159511128041332941', targetBlank: true },
-];
+const navIcons = {
+    MessageSquare, Image: ImageIcon, Video, Layers, Link: Link2, History,
+    ShoppingBag, Grid, Briefcase, FileText, HelpCircle, Newspaper,
+    CreditCard, Code, MessageCircle,
+};
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) => {
     const sidebarRef = useRef<HTMLElement>(null);
@@ -88,7 +74,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
             <nav className={`flex-1 overflow-y-auto overflow-x-hidden py-2 space-y-1 
         ${isCollapsed ? 'px-4' : 'px-3'}
       `}>
-                {navItems.map((item, idx) => {
+                {navbarData.map((item, idx) => {
                     if (item.label) {
                         return (
                             <div key={idx} className={`pt-4 pb-2 transition-[padding] duration-[400ms] ease-in-out ${isCollapsed ? 'px-0 text-center' : 'px-3'}`}>
@@ -101,12 +87,14 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, isCollapsed }: SidebarProps) =
                         )
                     }
 
+                    const Icon = navIcons[item.iconKey as keyof typeof navIcons];
+                    if (!Icon || !item.name || !item.link) return null;
                     return (
                         <SidebarItem
                             key={idx}
-                            icon={item.icon!}
-                            label={item.name!}
-                            href={item.link!}
+                            icon={Icon}
+                            label={item.name}
+                            href={item.link}
                             targetBlank={item.targetBlank}
                             isActive={item.link === '/'
                                 ? pathname === '/'

@@ -1,0 +1,5 @@
+[
+  { "id": "echo-4", "name": "EchoGPT 4.0", "tag": "Smart" },
+  { "id": "echo-3", "name": "EchoGPT 3.5", "tag": "Fast" },
+  { "id": "echo-vision", "name": "Echo Vision", "tag": "Beta" }
+]

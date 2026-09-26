@@ -1,19 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
-
-interface Model {
-    id: string;
-    name: string;
-    tag?: string;
-}
-
-const models: Model[] = [
-    { id: 'nano-lite', name: 'Nano Banana 2 Lite', tag: 'Fast' },
-    { id: 'nano-pro', name: 'Nano Banana 2 Pro', tag: 'Quality' },
-    { id: 'echo-vision', name: 'Echo Vision XL', tag: 'Beta' },
-    { id: 'dall-e-3', name: 'DALL-E 3', tag: 'Pro' }
-];
+import { imageModels as models } from '@/data/ImageStudioData';
 
 interface ModelDropdownProps {
     selectedModel: string;

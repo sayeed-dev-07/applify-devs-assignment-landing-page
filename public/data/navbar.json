@@ -1,0 +1,20 @@
+[
+  { "name": "New Chat", "iconKey": "MessageSquare", "isPrimary": true, "link": "/" },
+  { "label": "ENGAGEMENT" },
+  { "name": "Image Studio", "iconKey": "Image", "pro": true, "link": "/image-studio" },
+  { "name": "Video Studio", "iconKey": "Video", "pro": true, "link": "/video-studio" },
+  { "name": "Compare", "iconKey": "Layers", "link": "/compare" },
+  { "name": "Connectors", "iconKey": "Link", "link": "/connectors" },
+  { "name": "History", "iconKey": "History", "link": "/history" },
+  { "name": "Store", "iconKey": "ShoppingBag", "link": "/store" },
+  { "label": "AI TASKS" },
+  { "name": "AI Tasks", "iconKey": "Grid", "link": "/ai-tasks" },
+  { "name": "AI Job Analysis", "iconKey": "Briefcase", "link": "/ai-job-analysis" },
+  { "name": "AI SOP Builder", "iconKey": "FileText", "link": "/ai-sop-builder" },
+  { "label": "HELP & SUPPORT" },
+  { "name": "Support", "iconKey": "HelpCircle", "link": "/support" },
+  { "name": "Newsletter", "iconKey": "Newspaper", "link": "/newsletter" },
+  { "name": "Subscriptions", "iconKey": "CreditCard", "link": "/subscriptions" },
+  { "name": "API Platform", "iconKey": "Code", "link": "/api-platform" },
+  { "name": "Discord", "iconKey": "MessageCircle", "link": "https://discord.com/users/1159511128041332941", "targetBlank": true }
+]

@@ -3,19 +3,12 @@ import React, { useState } from 'react';
 import { Search, FileText, Database, Cloud, MessageSquare } from 'lucide-react';
 import { ConnectorCard } from './ConnectorCard';
 import { BsGithub, BsSlack } from 'react-icons/bs';
+import { connectorsData } from '@/data/ConnectorsData';
 
-
-const initialConnectors = [
-    { id: 'github', name: 'GitHub', description: 'Analyze repositories, review code, and automate pull requests.', icon: BsGithub, isConnected: true },
-    { id: 'notion', name: 'Notion', description: 'Sync your workspace documents and query your knowledge base.', icon: FileText, isConnected: true },
-    { id: 'slack', name: 'Slack', description: 'Interact with EchoGPT directly within your team channels.', icon: BsSlack, isConnected: false },
-    { id: 'postgres', name: 'PostgreSQL', description: 'Connect securely to query your database using natural language.', icon: Database, isConnected: false },
-    { id: 'gdrive', name: 'Google Drive', description: 'Index and search across your documents, sheets, and slides.', icon: Cloud, isConnected: false },
-    { id: 'discord', name: 'Discord', description: 'Add the EchoGPT bot to your server for community interactions.', icon: MessageSquare, isConnected: false },
-];
+const connectorIcons = { Github: BsGithub, FileText, Slack: BsSlack, Database, Cloud, MessageSquare };
 
 export const ConnectorsGrid = () => {
-    const [connectors, setConnectors] = useState(initialConnectors);
+    const [connectors, setConnectors] = useState(connectorsData);
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState<'all' | 'connected' | 'available'>('all');
 
@@ -76,16 +69,19 @@ export const ConnectorsGrid = () => {
             {/* Grid Layout */}
             {filteredConnectors.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
-                    {filteredConnectors.map((connector) => (
+                    {filteredConnectors.map((connector) => {
+                        const Icon = connectorIcons[connector.iconKey as keyof typeof connectorIcons];
+                        return (
                         <ConnectorCard
                             key={connector.id}
                             name={connector.name}
                             description={connector.description}
-                            icon={connector.icon}
+                            icon={Icon}
                             isConnected={connector.isConnected}
                             onToggle={() => toggleConnection(connector.id)}
                         />
-                    ))}
+                        );
+                    })}
                 </div>
             ) : (
                 <div className="w-full border border-dashed border-foreground/15 rounded-3xl p-12 flex flex-col items-center justify-center text-center gap-3 bg-foreground/1">
