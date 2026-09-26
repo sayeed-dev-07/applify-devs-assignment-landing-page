@@ -43,6 +43,7 @@ A highly modular, high-contrast monochrome React/Next.js application. This proje
 │   ├── support/                      # Help and support route
 │   ├── video-studio/                 # Video generation route
 │   ├── layout.tsx                    # Global layout wrapper
+│   ├── nout-found.tsx                # Global 404 page 
 │   └── page.tsx                      # Main landing page
 │
 ├── public/
